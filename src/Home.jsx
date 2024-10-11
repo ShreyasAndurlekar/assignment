@@ -1,9 +1,9 @@
 import Navbar from "./Navbar";
 import List from "./List";
 
-const App = () => {
+const Home = () => {
   return (
-    <div className="App">
+    <div>
       <Navbar />
       <div className="flex flex-col justify-center bg-gray-100 ">
         <p className="text-4xl font-montserrat font-bold mt-20 text-center lg:text-7xl">
@@ -15,4 +15,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default Home;

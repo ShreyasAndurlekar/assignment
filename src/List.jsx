@@ -29,7 +29,7 @@ const List = () => {
   ];
 
   return (
-    <div className="flex justify-center mt-40 font-montserrat">
+    <div className="flex justify-center mt-40 font-montserrat m-10">
         <div>
             {cardsData.map((card, index) => (
             <Card
