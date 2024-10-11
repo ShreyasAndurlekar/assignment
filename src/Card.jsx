@@ -5,7 +5,7 @@ const Card = ({ image, title, description, creator, genre }) => {
 
   return (
     <div className="bg-gray-100 w-full sm:w-80 md:w-96 lg:w-[400px] xl:w-[800px] mb-32">
-      <Link to={`/details/${titleSlug}`}>
+      <Link to={`/details/${titleSlug}`}> 
         <h2 className="text-3xl font-semibold mb-4 text-blue-500 cursor-pointer">
           {title}
         </h2>

@@ -17,7 +17,7 @@ const Comment = ({ author, text }) => {
 
 const Comments = () => {
   return (
-    <div className=" mx-auto mt-10">
+    <div className=" mx-auto mb-10">
       <p className="text-xl font-bold mb-4">Comments</p>
       <div className="bg-white shadow-md rounded-lg p-4">
         {commentsData.map((comment) => (
