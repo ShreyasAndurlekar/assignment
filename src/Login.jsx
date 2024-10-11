@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Navbar from './Navbar';
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate(); // Initialize navigate
   
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,6 +15,8 @@ const Login = () => {
     try {
       const response = await axios.post('http://localhost:5000/login', { email, password });
       console.log('Login successful:', response.data);
+      localStorage.setItem('token', response.data.token);
+      navigate('/'); 
     } catch (error) {
       console.error('Login failed:', error.response?.data);
       setError(error.response?.data?.error || 'An error occurred');

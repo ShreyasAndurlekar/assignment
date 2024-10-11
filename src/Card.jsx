@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+
 const Card = ({ image, title, description, creator, genre }) => {
   const titleSlug = title.toLowerCase().replace(/ /g, '-');
 
