@@ -33,7 +33,7 @@ const Details = () => {
     return (
         <div>
             <Navbar />
-            <div className='flex justify-center'>
+            <div className='flex justify-center m-10'>
                 <div className="flex flex-col w-full sm:w-80 md:w-96 lg:w-[400px] xl:w-[800px] mb-32">
                     {error && <p className="text-red-500">{error}</p>}
                     {titleData ? (
