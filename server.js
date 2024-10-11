@@ -1,9 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors'); 
+
 require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 5000;
+
+app.use(cors()); 
 
 const mongoURI = process.env.URL;
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -13,18 +17,17 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .catch((err) => console.log("Error connecting to MongoDB:", err));
 
 const titleSchema = new mongoose.Schema({
-    titleid: Number,
+    titleid: String,
     description: String,
-    title: String
+    title: String,
+    imgurl: String
 });
 
 const Title = mongoose.model('Title', titleSchema);
 
 app.get('/title', async (req, res) => {
 
-    const titleId = req.query.titleid; 
-
-    console.log(titleId);
+    const titleId = req.query.titleid
 
     if (!titleId) {
         return res.status(400).json({ error: "Title ID not provided" });
@@ -48,3 +51,5 @@ app.get('/title', async (req, res) => {
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
+
+
