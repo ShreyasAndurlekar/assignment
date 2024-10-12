@@ -14,7 +14,7 @@ app.use(cors());
   
 
 const mongoURI = process.env.URL;
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(mongoURI)
     .then(() => {
         console.log("Connected to MongoDB Atlas");
     })
