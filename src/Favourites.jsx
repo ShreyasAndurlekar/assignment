@@ -10,7 +10,7 @@ const Favourites = () => {
     const token = localStorage.getItem('token');
 
     if (!token) {
-      return; // If no token, exit the useEffect
+      return; 
     }
 
     let username = '';
@@ -25,7 +25,7 @@ const Favourites = () => {
 
     const fetchFavourites = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/get-favourites?username=${username}`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/get-favourites?username=${username}`);
         setFavouritesData(response.data.favourites);
       } catch (error) {
         console.error("Error fetching favourites:", error);
@@ -35,11 +35,9 @@ const Favourites = () => {
     fetchFavourites();
   }, []);
 
-  // Logout function
   const handleLogout = () => {
-    localStorage.removeItem('token'); // Remove token from local storage
-    // Redirect to the login page or homepage (modify the path as needed)
-    window.location.href = '/login'; // Change '/login' to your login route
+    localStorage.removeItem('token'); 
+    window.location.href = '/login'; 
   };
 
   return (
@@ -62,7 +60,7 @@ const Favourites = () => {
             ))}
           </div>
 
-          {/* Logout Button */}
+          
           <div className="flex justify-end mt-6">
             <button 
               onClick={handleLogout} 

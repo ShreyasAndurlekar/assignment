@@ -5,7 +5,6 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-md">
       <div className="flex justify-between items-center h-16">
-        {/* Left Logo - Home */}
         <div>
           <Link to="/">
             <img 
@@ -16,7 +15,6 @@ const Navbar = () => {
           </Link>
         </div>
         
-        {/* Right Logo - Profile */}
         <div className="mr-4">
           <Link to="/profile">
             <img 

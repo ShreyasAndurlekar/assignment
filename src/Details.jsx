@@ -16,7 +16,7 @@ const Details = () => {
         const fetchTitleData = async () => {
             try {
                 
-                const response = await axios.get(`http://localhost:5000/title?titleid=${titleid}`);
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/title?titleid=${titleid}`);
                 setTitleData(response.data); 
             } catch (err) {
                 

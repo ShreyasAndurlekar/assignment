@@ -28,7 +28,7 @@ const Card = ({ image, title, description, creator, genre, titleId }) => {
 
     try {
       console.log(username, titleId);
-      const response = await axios.post('http://localhost:5000/add-favourite', {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/add-favourite`, {
         username,
         titleId,
       });

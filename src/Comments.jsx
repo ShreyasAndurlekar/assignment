@@ -24,7 +24,7 @@ const Comments = () => {
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/comments?id=${titleid}`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/comments?id=${titleid}`);
         setComments(response.data);
       } catch (err) {
         console.error('Failed to fetch comments:', err);
@@ -68,7 +68,7 @@ const Comments = () => {
     const commentData = { username, comment: newComment.comment, titleid: titleid };
 
     try {
-        await axios.post(`http://localhost:5000/comment`, commentData);
+        await axios.post(`${process.env.REACT_APP_API_URL}/comment`, commentData);
         setComments([...comments, commentData]);
         setNewComment({ comment: '' });
         setError('');
