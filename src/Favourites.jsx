@@ -25,7 +25,7 @@ const Favourites = () => {
 
     const fetchFavourites = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/get-favourites?username=${username}`);
+        const response = await axios.get(`${process.env.REACT_APP_API}get-favourites?username=${username}`);
         setFavouritesData(response.data.favourites);
       } catch (error) {
         console.error("Error fetching favourites:", error);
