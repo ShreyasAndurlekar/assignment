@@ -22,8 +22,18 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 // Title Schema
 
+app.get('/', async (req, res) => {
+    res.send(`
+        <!DOCTYPE html>
+        <html>
+        <body>
+            <p>This is a simple HTML response from Node.js.</p>
+        </body>
+        </html>
+    `);
+});
 
-// Endpoint to get a title by ID
+
 app.get('/title', async (req, res) => {
     const titleId = req.query.titleid;
     if (!titleId) {
