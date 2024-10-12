@@ -11,20 +11,6 @@ const port = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(cors());
-
-const corsOptions = {
-    origin: function (origin, callback) {
-      if (!origin || ['http://localhost:5000'].indexOf(origin) !== -1) {
-        callback(null, true)
-      } else {
-        callback(new Error('Not allowed by CORS')); 
-      }
-    },
-    methods: ['GET', 'POST'], 
-    credentials: true, // Allow credentials (cookies, authorization headers)
-  };
-  
-  app.use(cors(corsOptions));
   
 
 const mongoURI = process.env.URL;
